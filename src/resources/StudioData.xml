@@ -1,0 +1,90 @@
+<Data>
+
+
+		<Buttons>
+			
+			<BtnSignIn>BtnSignIn</BtnSignIn>
+			<BTNnewApplicationName>SgButtion</BTNnewApplicationName>
+			<BtnApplicationIcon>BtnApplicationIcon</BtnApplicationIcon>
+			<BtnRefresh>BtnRefresh</BtnRefresh>
+			<BtnSave>BtnSave</BtnSave>
+			<BtnCancel>BtnCancel</BtnCancel>
+			<BtnAddDataItem>BtnAddDataItem</BtnAddDataItem>
+			<BtnPreview>BtnPreview</BtnPreview>
+			<BtnAddReport>BtnAddReport</BtnAddReport>
+			<BtnReportIcon>BtnReportIcon</BtnReportIcon>
+			
+		</Buttons>
+		
+		
+		<TextFields>
+			
+			<TextFieldUsername>TextFieldUsername</TextFieldUsername>
+			<TextFieldPassword>TextFieldPassword</TextFieldPassword>
+			<TextFieldApplicationName_ID>TextFieldApplicationName</TextFieldApplicationName_ID>
+			<TextFieldApplicationDescription>TextFieldApplicationDescription</TextFieldApplicationDescription>
+			<TextFieldDataItemName>TextFieldDataItemName</TextFieldDataItemName>
+			<TextFieldDataItemDescription>TextFieldDataItemDescription</TextFieldDataItemDescription>
+			<TextFieldMaxNumberOfRows>TextFieldMaxNumberOfRows</TextFieldMaxNumberOfRows>
+			<TextFieldQuery>TextFieldQuery</TextFieldQuery>
+			<TextFieldReportName>TextFieldReportName</TextFieldReportName>
+			<TextFieldReportFolder>TextFieldReportFolder</TextFieldReportFolder>
+			<TextFieldReportDescription>TextFieldReportDescription</TextFieldReportDescription>
+			
+			
+			
+		</TextFields>
+		
+		
+		
+		<CheckBox>
+			
+		    <CheckBoxRememberMe>CheckBoxRememberMe</CheckBoxRememberMe> 
+		    <CheckBoxDoNotPublish>CheckBoxDoNotPublish</CheckBoxDoNotPublish>
+		    <CheckBoxNotInMobile>CheckBoxNotInMobile</CheckBoxNotInMobile>
+		    <CustomNameRB>CustomNameRB</CustomNameRB>
+		</CheckBox>
+		
+		
+		
+		<LeftTabs>
+			
+			<TabItemGeneral>TabItemGeneral</TabItemGeneral>
+			<TabItemDataItems>TabItemDataItems</TabItemDataItems>
+			<TabItemReports>TabItemReports</TabItemReports>
+			<TabItemPermissions>TabItemPermissions</TabItemPermissions>
+			<TabItemQuery>TabItemQuery</TabItemQuery>
+			<DataItem_ResultTabItem>DataItem_ResultTabItem</DataItem_ResultTabItem>
+			<DataItemColumnsTabItem>DataItemColumnsTabItem</DataItemColumnsTabItem>
+			<SlicersTabItem>SlicersTabItem</SlicersTabItem>
+			<SparkLineTabItem>SparkLineTabItem</SparkLineTabItem>
+			<Action_TabItem>Action_TabItem</Action_TabItem>
+			
+		</LeftTabs>
+		
+		
+		
+		<Combo>
+			
+			<ComboDataSource>DropdownDataSource</ComboDataSource>
+			<ComboDataItemType>DropdownDataItemType</ComboDataItemType>
+			<ComboStorageLocation>DropDownStorageLocation</ComboStorageLocation>
+			<ComboRetrieveDataFrom>DropDownRetrieveDataFrom</ComboRetrieveDataFrom>
+			<ComboReportType>DropDownReportType</ComboReportType>
+			<ComboTabType>TabTypeCombo</ComboTabType>
+			
+		</Combo>
+	
+	
+		   	
+<!-- 	   	General Info -->
+		<UserProd></UserProd>
+		<passwordProd></passwordProd>
+		
+		<userQA>sgautomation@test.com</userQA>
+		<passwordQA>1234</passwordQA>
+		<badPassword>incorrectPassword</badPassword>
+		<StartupApplication>SQL Golden App</StartupApplication>
+	
+	
+</Data>
