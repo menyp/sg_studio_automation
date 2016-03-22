@@ -59,7 +59,6 @@ public class SanityTestStudio {
 //		genMeth.eyesCheckWindow(eyes, "Login Screen", useEye);
 
 		genMeth.clickId(genMeth, sgData.BtnSignIn);
-
 		// Right click the Applications
 		genMeth.rightClickElement(By.name("Applications"), genMeth);
 //		Actions action = new Actions(driver);
