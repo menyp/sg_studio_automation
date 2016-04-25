@@ -17,8 +17,21 @@ public class StudioElements {
 	String BtnPreview;
 	String BtnAddReport;
 	String BtnReportIcon;
-
-
+	String BtnSGISRootTextBlock;
+	String BtnX;
+	String BtnLsmApplicationsName;
+	String BtnEditApplication;
+	String BtnPublishApplication;
+	String BtnExportApplication;
+	String BtnDuplicateApplication;
+	String BtnDeleteApplication;
+	String BtnUnpublishApplication;
+	String BtnCloseTabItem;
+	String BtnCancellationButton;
+	String BtnApprovalButton;
+	String BtnAddTabButton;
+	String BtnNewDataItemApplication;
+	String BtnNewReport;
 	
 	//Text Fields
 	String TextFieldUsername;
@@ -30,8 +43,8 @@ public class StudioElements {
 	String TextFieldMaxNumberOfRows;
 	String TextFieldQuery;
 	String TextFieldReportName;
-	String TextFieldReportFolder;
 	String TextFieldReportDescription;
+	String TextFieldTabName;
 
 	
 	
@@ -39,7 +52,7 @@ public class StudioElements {
 	String CheckBoxRememberMe;
 	String CheckBoxDoNotPublish;
 	String CheckBoxNotInMobile;
-	String CustomNameRB;
+	
 	
 	//Left Tabs
 	
@@ -53,6 +66,11 @@ public class StudioElements {
 	String SlicersTabItem;
 	String SparkLineTabItem;
 	String Action_TabItem;
+	String TabItemTabs;
+	String URLTabItem;
+	String MapTabItem;
+	
+	
 	
 	
 	//Combo
@@ -62,8 +80,23 @@ public class StudioElements {
 	String ComboRetrieveDataFrom;
 	String ComboReportType;
 	String ComboTabType;
+	String ComboDataItemsCMB;
+	String ComboComboSourceColumn;
+	String ComboDropdowReportFolder;
 	
 	
+	//Radio Buttons
+	String RDBDataItem;
+	String RDBCustomNameRB;
+	String RDBGpsLocationRB;
+	String RDBAddressLocationRB;
+
+	
+	//General
+	String DIserviceCallsDemo;
+	String userQA;
+	String passwordQA;
+	String GoldenAppAuto;
 
 	public StudioElements(String langXml, String xmlPath)
 			throws ParserConfigurationException, SAXException, IOException,
@@ -79,7 +112,25 @@ public class StudioElements {
 		this.BtnPreview = XmlHandel.readAndroidXml("BtnPreview", langXml, xmlPath);
 		this.BtnAddReport = XmlHandel.readAndroidXml("BtnAddReport", langXml, xmlPath);
 		this.BtnReportIcon = XmlHandel.readAndroidXml("BtnReportIcon", langXml, xmlPath);
+		this.BtnSGISRootTextBlock = XmlHandel.readAndroidXml("BtnSGISRootTextBlock", langXml, xmlPath);
+		this.BtnX = XmlHandel.readAndroidXml("BtnX", langXml, xmlPath);
+		this.BtnLsmApplicationsName = XmlHandel.readAndroidXml("BtnLsmApplicationsName", langXml, xmlPath);
+		
+		this.BtnEditApplication = XmlHandel.readAndroidXml("BtnEditApplication", langXml, xmlPath);
+		this.BtnPublishApplication = XmlHandel.readAndroidXml("BtnPublishApplication", langXml, xmlPath);
+		this.BtnExportApplication = XmlHandel.readAndroidXml("BtnExportApplication", langXml, xmlPath);
+		this.BtnDuplicateApplication = XmlHandel.readAndroidXml("BtnDuplicateApplication", langXml, xmlPath);
+		this.BtnDeleteApplication = XmlHandel.readAndroidXml("BtnDeleteApplication", langXml, xmlPath);
+		this.BtnUnpublishApplication = XmlHandel.readAndroidXml("BtnUnpublishApplication", langXml, xmlPath);
+		this.BtnCloseTabItem = XmlHandel.readAndroidXml("BtnCloseTabItem", langXml, xmlPath);
+		this.BtnCancellationButton = XmlHandel.readAndroidXml("BtnCancellationButton", langXml, xmlPath);
+		this.BtnApprovalButton = XmlHandel.readAndroidXml("BtnApprovalButton", langXml, xmlPath);
+		this.BtnAddTabButton = XmlHandel.readAndroidXml("BtnAddTabButton", langXml, xmlPath);
+		this.BtnNewDataItemApplication = XmlHandel.readAndroidXml("BtnNewDataItemApplication", langXml, xmlPath);
+		this.BtnNewReport = XmlHandel.readAndroidXml("BtnNewReport", langXml, xmlPath);
 
+		
+		
 		
 		
 		
@@ -93,14 +144,18 @@ public class StudioElements {
 		this.TextFieldMaxNumberOfRows = XmlHandel.readAndroidXml("TextFieldMaxNumberOfRows", langXml, xmlPath);
 		this.TextFieldQuery = XmlHandel.readAndroidXml("TextFieldQuery", langXml, xmlPath);
 		this.TextFieldReportName = XmlHandel.readAndroidXml("TextFieldReportName", langXml, xmlPath);
-		this.TextFieldReportFolder = XmlHandel.readAndroidXml("TextFieldReportFolder", langXml, xmlPath);
 		this.TextFieldReportDescription = XmlHandel.readAndroidXml("TextFieldReportDescription", langXml, xmlPath);
+		this.TextFieldTabName = XmlHandel.readAndroidXml("TextFieldTabName", langXml, xmlPath);
 
+		
+		
 		
 		this.CheckBoxRememberMe = XmlHandel.readAndroidXml("CheckBoxRememberMe", langXml, xmlPath);
 		this.CheckBoxDoNotPublish = XmlHandel.readAndroidXml("CheckBoxDoNotPublish", langXml, xmlPath);
 		this.CheckBoxNotInMobile = XmlHandel.readAndroidXml("CheckBoxNotInMobile", langXml, xmlPath);
-		this.CustomNameRB = XmlHandel.readAndroidXml("CustomNameRB", langXml, xmlPath);
+		
+		
+
 
 		
 		this.TabItemGeneral = XmlHandel.readAndroidXml("TabItemGeneral", langXml, xmlPath);
@@ -113,7 +168,12 @@ public class StudioElements {
 		this.SlicersTabItem = XmlHandel.readAndroidXml("SlicersTabItem", langXml, xmlPath);
 		this.SparkLineTabItem = XmlHandel.readAndroidXml("SparkLineTabItem", langXml, xmlPath);
 		this.Action_TabItem = XmlHandel.readAndroidXml("Action_TabItem", langXml, xmlPath);
+		this.TabItemTabs = XmlHandel.readAndroidXml("TabItemTabs", langXml, xmlPath);
+		this.URLTabItem = XmlHandel.readAndroidXml("URLTabItem", langXml, xmlPath);
+		this.MapTabItem = XmlHandel.readAndroidXml("MapTabItem", langXml, xmlPath);
 
+		
+		
 		
 		this.ComboDataSource = XmlHandel.readAndroidXml("ComboDataSource", langXml, xmlPath);
 		this.ComboDataItemType = XmlHandel.readAndroidXml("ComboDataItemType", langXml, xmlPath);
@@ -121,7 +181,35 @@ public class StudioElements {
 		this.ComboRetrieveDataFrom = XmlHandel.readAndroidXml("ComboRetrieveDataFrom", langXml, xmlPath);
 		this.ComboReportType = XmlHandel.readAndroidXml("ComboReportType", langXml, xmlPath);
 		this.ComboTabType = XmlHandel.readAndroidXml("ComboTabType", langXml, xmlPath);
+		this.ComboDataItemsCMB = XmlHandel.readAndroidXml("ComboDataItemsCMB", langXml, xmlPath);
+		this.ComboComboSourceColumn = XmlHandel.readAndroidXml("ComboComboSourceColumn", langXml, xmlPath);
+		this.ComboDropdowReportFolder = XmlHandel.readAndroidXml("ComboDropdowReportFolder", langXml, xmlPath);
 
+		
+		
+		
+		
+		
+		
+		this.RDBCustomNameRB = XmlHandel.readAndroidXml("RDBCustomNameRB", langXml, xmlPath);
+		this.RDBDataItem = XmlHandel.readAndroidXml("RDBDataItem", langXml, xmlPath);
+		this.RDBGpsLocationRB = XmlHandel.readAndroidXml("RDBGpsLocationRB", langXml, xmlPath);
+		this.RDBAddressLocationRB = XmlHandel.readAndroidXml("RDBAddressLocationRB", langXml, xmlPath);
+
+		
+	
+		
+		
+
+		this.DIserviceCallsDemo = XmlHandel.readAndroidXml("DIserviceCallsDemo", langXml, xmlPath);
+		this.userQA = XmlHandel.readAndroidXml("userQA", langXml, xmlPath);
+		this.passwordQA = XmlHandel.readAndroidXml("passwordQA", langXml, xmlPath);
+		this.GoldenAppAuto = XmlHandel.readAndroidXml("GoldenAppAuto", langXml, xmlPath);
+
+		
+		
+		
+		
 		
 		
 	}

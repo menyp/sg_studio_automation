@@ -13,6 +13,24 @@
 			<BtnPreview>BtnPreview</BtnPreview>
 			<BtnAddReport>BtnAddReport</BtnAddReport>
 			<BtnReportIcon>BtnReportIcon</BtnReportIcon>
+			<BtnSGISRootTextBlock>SGISRootTextBlock</BtnSGISRootTextBlock>
+			<BtnX>BtnX</BtnX>
+			<BtnLsmApplicationsName>Applications</BtnLsmApplicationsName>
+			
+			<BtnEditApplication>BtnEditApplication</BtnEditApplication>
+			<BtnPublishApplication>BtnPublishApplication</BtnPublishApplication>
+			<BtnExportApplication>BtnExportApplication</BtnExportApplication>
+			<BtnDuplicateApplication>BtnDuplicateApplication</BtnDuplicateApplication>
+			<BtnDeleteApplication>BtnDeleteApplication</BtnDeleteApplication>
+			<BtnUnpublishApplication>BtnUnpublishApplication</BtnUnpublishApplication>
+			<BtnCloseTabItem>BtnCloseTabItem</BtnCloseTabItem>
+			<BtnCancellationButton>CancellationButton</BtnCancellationButton>
+			<BtnApprovalButton>ApprovalButton</BtnApprovalButton>
+			<BtnAddTabButton>AddTabButton</BtnAddTabButton>
+			<BtnNewDataItemApplication>BtnNew Data ItemApplication</BtnNewDataItemApplication>
+			<BtnNewReport>BtnNew Report</BtnNewReport>
+			
+			
 			
 		</Buttons>
 		
@@ -28,8 +46,11 @@
 			<TextFieldMaxNumberOfRows>TextFieldMaxNumberOfRows</TextFieldMaxNumberOfRows>
 			<TextFieldQuery>TextFieldQuery</TextFieldQuery>
 			<TextFieldReportName>TextFieldReportName</TextFieldReportName>
-			<TextFieldReportFolder>TextFieldReportFolder</TextFieldReportFolder>
 			<TextFieldReportDescription>TextFieldReportDescription</TextFieldReportDescription>
+			<TextFieldTabName>TextFieldTabName</TextFieldTabName>
+			
+			
+			
 			
 			
 			
@@ -42,7 +63,6 @@
 		    <CheckBoxRememberMe>CheckBoxRememberMe</CheckBoxRememberMe> 
 		    <CheckBoxDoNotPublish>CheckBoxDoNotPublish</CheckBoxDoNotPublish>
 		    <CheckBoxNotInMobile>CheckBoxNotInMobile</CheckBoxNotInMobile>
-		    <CustomNameRB>CustomNameRB</CustomNameRB>
 		</CheckBox>
 		
 		
@@ -50,7 +70,8 @@
 		<LeftTabs>
 			
 			<TabItemGeneral>TabItemGeneral</TabItemGeneral>
-			<TabItemDataItems>TabItemDataItems</TabItemDataItems>
+			<TabItemDataItems>TabItemDataItem</TabItemDataItems>
+			<TabItemTabs>TabItemTabs</TabItemTabs>
 			<TabItemReports>TabItemReports</TabItemReports>
 			<TabItemPermissions>TabItemPermissions</TabItemPermissions>
 			<TabItemQuery>TabItemQuery</TabItemQuery>
@@ -59,6 +80,8 @@
 			<SlicersTabItem>SlicersTabItem</SlicersTabItem>
 			<SparkLineTabItem>SparkLineTabItem</SparkLineTabItem>
 			<Action_TabItem>Action_TabItem</Action_TabItem>
+			<URLTabItem>URLTabItem</URLTabItem>
+			<MapTabItem>MapTabItem</MapTabItem>
 			
 		</LeftTabs>
 		
@@ -72,19 +95,34 @@
 			<ComboRetrieveDataFrom>DropDownRetrieveDataFrom</ComboRetrieveDataFrom>
 			<ComboReportType>DropDownReportType</ComboReportType>
 			<ComboTabType>TabTypeCombo</ComboTabType>
+			<ComboDataItemsCMB>DataItemsCMB</ComboDataItemsCMB>
+			<ComboComboSourceColumn>ComboSourceColumn</ComboComboSourceColumn>
+			<ComboDropdowReportFolder>DropdowReportFolder</ComboDropdowReportFolder>
+			
+			
 			
 		</Combo>
-	
+	<RadioButtons>
+		
+		 <RDBCustomNameRB>CustomNameRB</RDBCustomNameRB>
+		 <RDBDataItem>RDBDataItem</RDBDataItem>
+		 <RDBGpsLocationRB>GpsLocationRB</RDBGpsLocationRB>
+		<RDBAddressLocationRB>AddressLocationRB</RDBAddressLocationRB>
+		
+		
+	</RadioButtons>
 	
 		   	
 <!-- 	   	General Info -->
 		<UserProd></UserProd>
 		<passwordProd></passwordProd>
 		
-		<userQA>sgautomation@test.com</userQA>
-		<passwordQA>1234</passwordQA>
+		<userQA>appium1@1.com</userQA>
+		<passwordQA>123</passwordQA>
 		<badPassword>incorrectPassword</badPassword>
 		<StartupApplication>SQL Golden App</StartupApplication>
+		<DIserviceCallsDemo>SELECT * from [dbo].[TBL_ServiceCalls]</DIserviceCallsDemo>
+		<GoldenAppAuto>Golden App Auto</GoldenAppAuto>
 	
 	
 </Data>

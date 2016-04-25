@@ -1,5 +1,3 @@
-
-
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -36,27 +34,21 @@ public class StudioMethods {
 
 	WiniumDriver driver;
 	StudioElements sgData;
-	//StudioMethods genMeth;
+	// StudioMethods genMeth;
 	Eyes eyes = new Eyes();
 	Boolean useEye = true;
 
-	public void cleanLogin(StudioMethods genMeth,  StudioElements sgData,
-			String user) throws ParserConfigurationException, SAXException,
+	public void cleanLogin(StudioMethods genMeth) throws ParserConfigurationException, SAXException,
 			IOException, InterruptedException {
+		
+		genMeth.clearId(genMeth, sgData.TextFieldUsername);
+		genMeth.sendId(genMeth, sgData.TextFieldUsername, sgData.userQA);
 
-		// Check if the login user name is displayed
-		Boolean isUserNameDisplayed = genMeth.checkIsElementVisible(By.name(user));
-		if (isUserNameDisplayed == false) {
-			
-			//delete credentials & insert the correct ones
-			//genMeth.clearId(genMeth, "TextFieldUsername");
-			//genMeth.clearId(genMeth, "TextFieldPassword");
+		genMeth.clearId(genMeth, sgData.TextFieldPassword);
+		genMeth.sendId(genMeth, sgData.TextFieldPassword, sgData.passwordQA);
 
+		genMeth.clickId(genMeth, sgData.BtnSignIn);
 
-			genMeth.sendId(genMeth, "TextFieldUsername", user);
-			genMeth.sendId(genMeth, "TextFieldPassword", "123");
-
-		}
 	}
 
 	public void eyesCheckWindow(Eyes eyes, String testName, Boolean useEye)
@@ -64,14 +56,15 @@ public class StudioMethods {
 
 		if (useEye) {
 			eyes.setApiKey("Hbh6716cKDCgn8a9bMAREPM105nbW109PQe0993So5GwFpNM110");
+
 			eyes.open(driver, "iOS_SG", testName);
-			 eyes.setMatchTimeout(2);
+			eyes.setMatchTimeout(2);
 			eyes.checkWindow("Sample Screen");
-		
-			
+
 			boolean skipfailure = true;
 			if (skipfailure) {
-				// Use the below code instead of eyes.close(); --> It will allow to continue the test even if the UI testing will fail
+				// Use the below code instead of eyes.close(); --> It will allow
+				// to continue the test even if the UI testing will fail
 				com.applitools.eyes.TestResults testResult = eyes.close(false);
 
 			} else {
@@ -82,7 +75,6 @@ public class StudioMethods {
 		}
 
 	}
-	
 
 	public WiniumDriver setDesktopOptions(StudioMethods genMeth)
 			throws IOException, ParserConfigurationException, SAXException,
@@ -93,35 +85,35 @@ public class StudioMethods {
 
 		try {
 
-			driver = new WiniumDriver (new URL("http://localhost:9999"), options);
+			driver = new WiniumDriver(new URL("http://localhost:9999"), options);
 		}
 
 		catch (MalformedURLException e) {
 
 			genMeth.takeScreenShot(driver, genMeth,
 					"Faliled to open Winum driver");
-			org.testng.Assert
-					.fail("WebElement" + " Faliled to open Winium driver");
+			org.testng.Assert.fail("WebElement"
+					+ " Faliled to open Winium driver");
 		}
 
 		return driver;
 	}
 
-	public StudioElements setElements(String webElementXmlPath, String webElementXmlLang) throws ParserConfigurationException, jdk.internal.org.xml.sax.SAXException, IOException, InterruptedException, SAXException{
-		
+	public StudioElements setElements(String webElementXmlPath,
+			String webElementXmlLang) throws ParserConfigurationException,
+			jdk.internal.org.xml.sax.SAXException, IOException,
+			InterruptedException, SAXException {
 
-	sgData= new StudioElements(webElementXmlLang, webElementXmlPath);
-	
-	
-	return sgData;
+		sgData = new StudioElements(webElementXmlLang, webElementXmlPath);
+
+		return sgData;
 	}
-
 
 	public void signOutFromStartup(StudioMethods genMeth, StudioElements sgSata)
 			throws InterruptedException, IOException {
-	
+
 	}
-	
+
 	public String getValueFromPropFile(String key) {
 		Properties properties = new Properties();
 		String value = "";
@@ -140,10 +132,8 @@ public class StudioMethods {
 		return value;
 	}
 
-	
-	
-	public void takeScreenShot(WiniumDriver driver,
-			StudioMethods genMeth, String imageName) throws IOException {
+	public void takeScreenShot(WiniumDriver driver, StudioMethods genMeth,
+			String imageName) throws IOException {
 
 		File scrFile = (driver.getScreenshotAs(OutputType.FILE));
 		String currentTime = genMeth.currentTime();
@@ -181,8 +171,8 @@ public class StudioMethods {
 
 	// ==================== RETURN ELEMENT
 
-	public WebElement returnCss(WiniumDriver driver,
-			String cssSelector) throws InterruptedException {
+	public WebElement returnCss(WiniumDriver driver, String cssSelector)
+			throws InterruptedException {
 
 		StudioMethods genMeth = new StudioMethods();
 		try {
@@ -202,8 +192,8 @@ public class StudioMethods {
 		return myElement;
 	}
 
-	public WebElement returnId(WiniumDriver driver,
-			StudioMethods genMeth, String id) throws InterruptedException {
+	public WebElement returnId(WiniumDriver driver, StudioMethods genMeth,
+			String id) throws InterruptedException {
 
 		try {
 
@@ -223,7 +213,8 @@ public class StudioMethods {
 	}
 
 	public WebElement returnClassName(WiniumDriver driver,
-			StudioMethods genMeth, String className) throws InterruptedException {
+			StudioMethods genMeth, String className)
+			throws InterruptedException {
 
 		try {
 
@@ -241,8 +232,8 @@ public class StudioMethods {
 		return myElement;
 	}
 
-	public WebElement returnXpth(WiniumDriver driver,
-			StudioMethods genMeth, String xpth) throws InterruptedException {
+	public WebElement returnXpth(WiniumDriver driver, StudioMethods genMeth,
+			String xpth) throws InterruptedException {
 
 		try {
 
@@ -260,8 +251,8 @@ public class StudioMethods {
 
 	}
 
-	public WebElement returnName(WiniumDriver driver,
-			StudioMethods genMeth, String name) throws InterruptedException {
+	public WebElement returnName(WiniumDriver driver, StudioMethods genMeth,
+			String name) throws InterruptedException {
 
 		try {
 
@@ -280,7 +271,8 @@ public class StudioMethods {
 
 	}
 
-	public WebElement returnBy( StudioMethods genMeth, By by) throws InterruptedException {
+	public WebElement returnBy(StudioMethods genMeth, By by)
+			throws InterruptedException {
 
 		try {
 
@@ -302,8 +294,8 @@ public class StudioMethods {
 	// ========= CLICK an ELEMENT
 	// =========================================================================
 
-	public void clickBy(WiniumDriver driver, StudioMethods genMeth,
-			By by) throws InterruptedException {
+	public void clickBy(WiniumDriver driver, StudioMethods genMeth, By by)
+			throws InterruptedException {
 
 		try {
 
@@ -319,7 +311,7 @@ public class StudioMethods {
 
 	}
 
-		public void clickCss(WiniumDriver driver, StudioMethods genMeth,
+	public void clickCss(WiniumDriver driver, StudioMethods genMeth,
 			String cssSelector) throws InterruptedException {
 
 		try {
@@ -354,7 +346,7 @@ public class StudioMethods {
 		}
 	}
 
-public void clickId(StudioMethods genMeth, String id)
+	public void clickId(StudioMethods genMeth, String id)
 			throws InterruptedException, IOException {
 
 		try {
@@ -373,8 +365,8 @@ public void clickId(StudioMethods genMeth, String id)
 		}
 	}
 
-		public void clickClassName(WiniumDriver driver,
-			StudioMethods genMeth, String className) throws InterruptedException {
+	public void clickClassName(WiniumDriver driver, StudioMethods genMeth,
+			String className) throws InterruptedException {
 
 		try {
 
@@ -411,8 +403,6 @@ public void clickId(StudioMethods genMeth, String id)
 
 	}
 
-
-
 	public void clickName(StudioMethods genMeth, String name)
 			throws InterruptedException, IOException {
 
@@ -435,8 +425,8 @@ public void clickId(StudioMethods genMeth, String id)
 	// ======================== SEND ELEMENT
 	// =========================================
 
-	public void sendBy(WiniumDriver driver, StudioMethods genMeth,
-			By by, String send) throws InterruptedException, IOException {
+	public void sendBy(WiniumDriver driver, StudioMethods genMeth, By by,
+			String send) throws InterruptedException, IOException {
 
 		try {
 
@@ -492,9 +482,8 @@ public void clickId(StudioMethods genMeth, String id)
 
 	}
 
-	public void sendClassName(WiniumDriver driver,
-			StudioMethods genMeth, String className, String send)
-			throws InterruptedException {
+	public void sendClassName(WiniumDriver driver, StudioMethods genMeth,
+			String className, String send) throws InterruptedException {
 
 		try {
 
@@ -530,8 +519,8 @@ public void clickId(StudioMethods genMeth, String id)
 	}
 
 	/*
-	 * public void sendXpth(WiniumDriver driver, IosMethods genMeth,
-	 * String xpth, String send) throws IOException {
+	 * public void sendXpth(WiniumDriver driver, IosMethods genMeth, String
+	 * xpth, String send) throws IOException {
 	 * 
 	 * try {
 	 * 
@@ -588,8 +577,8 @@ public void clickId(StudioMethods genMeth, String id)
 
 	}
 
-	public void clearClassName(WiniumDriver driver,
-			StudioMethods genMeth, String className) throws InterruptedException {
+	public void clearClassName(WiniumDriver driver, StudioMethods genMeth,
+			String className) throws InterruptedException {
 
 		try {
 
@@ -651,9 +640,9 @@ public void clickId(StudioMethods genMeth, String id)
 	 */
 
 	// Look for an element in a few tries (with counter)
-	public void waitForElementToBeInvisible(WiniumDriver driver,
-			By byType, int numAttempts) throws IOException,
-			ParserConfigurationException, SAXException {
+	public void waitForElementToBeInvisible(WiniumDriver driver, By byType,
+			int numAttempts) throws IOException, ParserConfigurationException,
+			SAXException {
 
 		int count = 0;
 		Boolean isInvisible = false;
@@ -692,17 +681,17 @@ public void clickId(StudioMethods genMeth, String id)
 
 	}
 
-	public void waitForElementToBeVisible(WiniumDriver driver,
-			By By, int numAttempts) throws IOException,
-			ParserConfigurationException, SAXException {
+	public void waitForElementToBeVisible(WiniumDriver driver, By By,
+			int numAttempts) throws IOException, ParserConfigurationException,
+			SAXException {
 
 		StudioMethods genMeth = new StudioMethods();
 		int count = 0;
 		WebElement elementToBeVisible = null;
 		while (count < numAttempts) {
 			try {
-				elementToBeVisible = new FluentWait<WiniumDriver>(
-						driver).withTimeout(60, TimeUnit.SECONDS)
+				elementToBeVisible = new FluentWait<WiniumDriver>(driver)
+						.withTimeout(60, TimeUnit.SECONDS)
 						.pollingEvery(5, TimeUnit.SECONDS)
 						.ignoring(NoSuchElementException.class)
 						.until(ExpectedConditions.elementToBeClickable(By));
@@ -735,7 +724,7 @@ public void clickId(StudioMethods genMeth, String id)
 	public WebElement fluentwait(WiniumDriver driver, final By byType) {
 		Wait<WiniumDriver> wait = new FluentWait<WiniumDriver>(driver)
 
-		.withTimeout(30, TimeUnit.SECONDS).pollingEvery(5, TimeUnit.SECONDS)
+		.withTimeout(10, TimeUnit.SECONDS).pollingEvery(1, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 
 		WebElement foo = (WebElement) wait
@@ -931,127 +920,148 @@ public void clickId(StudioMethods genMeth, String id)
 		return curDate;
 	}
 
+	public void rightClickElement(By by, StudioMethods genMeth)
+			throws InterruptedException {
 
-
-
-	public void rightClickElement(By by, StudioMethods genMeth) throws InterruptedException{
-		
 		Actions action = new Actions(driver);
 		WebElement Element = genMeth.returnBy(genMeth, by);
 		action.contextClick(Element).sendKeys(Keys.ARROW_DOWN).perform();
-		
-		
+
 	}
-	
-	public void doubleClickElement(By by, StudioMethods genMeth) throws InterruptedException{
-		
+
+	public void doubleClickElement(By by, StudioMethods genMeth)
+			throws InterruptedException {
+
 		Actions action = new Actions(driver);
 		WebElement Element = genMeth.returnBy(genMeth, by);
 		action.doubleClick(Element).perform();
-	
 	}
-	
 
-/*	public void locationServicesHadle(IosMethods genMeth)
-			throws ParserConfigurationException, SAXException, IOException,
-			InterruptedException {
-		boolean isLocationDisplay = genMeth.checkIsElementVisible(By
-				.name("Allow"));
-		if (isLocationDisplay) {
+	public void pressF5(By by, StudioMethods genMeth)
+			throws InterruptedException {
 
-			genMeth.clickName(genMeth, "Allow");
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.F5).perform();
+	}
+
+	public void sendIdF5(StudioMethods genMeth, String id, Keys f5)
+			throws IOException {
+		// TODO Auto-generated method stub
+		try {
+
+			WebElement myElement = genMeth.fluentwait(driver, By.id(id));
+			myElement.sendKeys(f5);
 		}
 
-	}
+		catch (Exception e) {
 
-	 public void accessToContactsHandle(IosMethods genMeth)
-	 throws ParserConfigurationException, SAXException, IOException,
-	 InterruptedException {
-	 boolean isLocationDisplay =
-	 genMeth.checkIsElementVisible(By.name(iosData.CameraPemissions_ID));
-	 boolean isLocationDisplay = genMeth
-	 .checkIsElementVisible(By.name("OK"));
-	
-	 if (isLocationDisplay) {
-	
-	 genMeth.clickName(genMeth, "OK");
-	 }
-	
-	 }
-*/
-	/*public void accessToCameraHandle(IosMethods genMeth)
-			throws ParserConfigurationException, SAXException, IOException,
-			InterruptedException {
-		// boolean accessToCamera =
-		// genMeth.checkIsElementVisible(By.name(iosData.CameraPemissions_ID));
-		boolean accessToCamera = genMeth.checkIsElementVisible(By
-				.name("Don't Allow"));
+			genMeth.takeScreenShot(driver, genMeth, id);
+			org.testng.Assert.fail(id + "didn't displayed");
 
-		if (accessToCamera) {
-
-			genMeth.clickName(genMeth, iosData.BTNokName);
 		}
+	}
+
+	public void refresh(StudioMethods genMeth) throws InterruptedException,
+			IOException {
+
+		genMeth.rightClickElement(By.id(sgData.BtnSGISRootTextBlock), genMeth);
+		genMeth.clickName(genMeth, "Refresh");
+		Thread.sleep(4000);
 
 	}
 
-	public void sendNotificationHandle(IosMethods genMeth)
-			throws ParserConfigurationException, SAXException, IOException,
-			InterruptedException {
-		// boolean isLocationDisplay =
-		// genMeth.checkIsElementVisible(By.name(iosData.CameraPemissions_ID));
-		boolean isLocationDisplay = genMeth
-				.checkIsElementVisible(By.name("OK"));
+	
+	public void createGoldenAutomation(StudioMethods genMeth) throws InterruptedException, IOException{
 
-		if (isLocationDisplay) {
+		//Create Golden App Automation
+		genMeth.rightClickElement(By.name("Applications"), genMeth);
+		genMeth.clickName(genMeth, "New Application");
 
-			genMeth.clickName(genMeth, "OK");
-		}
-
-	}
-
-	public void openStratupScreen(StudioMethods genMeth, StudioElements sgData) throws ParserConfigurationException, SAXException, IOException, InterruptedException{
-		
-		
-	//	boolean isStartupScreenDisplay = genMeth.checkIsElementVisible(By.name(iosData.Appium_Startup));
-
-		boolean isStartupScreenDisplay = genMeth.checkIsElementVisible(By.name("Applications"));
-		
-		if (isStartupScreenDisplay != true ) {
-
-		
-		}
+		//Create a new app & save it
+		genMeth.sendId(genMeth, sgData.TextFieldApplicationName_ID, sgData.GoldenAppAuto);		
+		genMeth.clickId(genMeth, sgData.BtnSave);
+		genMeth.clickId(genMeth, sgData.BtnCloseTabItem);
 
 	}
-	// public void changeConnectionType(String mode) {
-	//
-	// NetworkConnection mobileDriver = (NetworkConnection) driver;
-	// if (mode == "AIRPLANE_MODE") {
-	//
-	// mobileDriver.setNetworkConnection(NetworkConnection.ConnectionType.AIRPLANE_MODE);
-	// }
-	//
-	// else if (mode == "WIFI") {
-	//
-	// mobileDriver.setNetworkConnection(NetworkConnection.ConnectionType.WIFI);
-	//
-	// }
-	//
-	// else if (mode == "DATA") {
-	//
-	// mobileDriver.setNetworkConnection(NetworkConnection.ConnectionType.DATA);
-	//
-	// }
-	//
-	// else if (mode == "ALL") {
-	//
-	// mobileDriver.setNetworkConnection(NetworkConnection.ConnectionType.ALL);
-	//
-	// }
-	//
-	// }
-	//
 	/*
-	 * public void setAirplainMode() {
+	 * public void locationServicesHadle(IosMethods genMeth) throws
+	 * ParserConfigurationException, SAXException, IOException,
+	 * InterruptedException { boolean isLocationDisplay =
+	 * genMeth.checkIsElementVisible(By .name("Allow")); if (isLocationDisplay)
+	 * {
+	 * 
+	 * genMeth.clickName(genMeth, "Allow"); }
+	 * 
+	 * }
+	 * 
+	 * public void accessToContactsHandle(IosMethods genMeth) throws
+	 * ParserConfigurationException, SAXException, IOException,
+	 * InterruptedException { boolean isLocationDisplay =
+	 * genMeth.checkIsElementVisible(By.name(iosData.CameraPemissions_ID));
+	 * boolean isLocationDisplay = genMeth
+	 * .checkIsElementVisible(By.name("OK"));
+	 * 
+	 * if (isLocationDisplay) {
+	 * 
+	 * genMeth.clickName(genMeth, "OK"); }
+	 * 
+	 * }
+	 */
+	/*
+	 * public void accessToCameraHandle(IosMethods genMeth) throws
+	 * ParserConfigurationException, SAXException, IOException,
+	 * InterruptedException { // boolean accessToCamera = //
+	 * genMeth.checkIsElementVisible(By.name(iosData.CameraPemissions_ID));
+	 * boolean accessToCamera = genMeth.checkIsElementVisible(By
+	 * .name("Don't Allow"));
+	 * 
+	 * if (accessToCamera) {
+	 * 
+	 * genMeth.clickName(genMeth, iosData.BTNokName); }
+	 * 
+	 * }
+	 * 
+	 * public void sendNotificationHandle(IosMethods genMeth) throws
+	 * ParserConfigurationException, SAXException, IOException,
+	 * InterruptedException { // boolean isLocationDisplay = //
+	 * genMeth.checkIsElementVisible(By.name(iosData.CameraPemissions_ID));
+	 * boolean isLocationDisplay = genMeth
+	 * .checkIsElementVisible(By.name("OK"));
+	 * 
+	 * if (isLocationDisplay) {
+	 * 
+	 * genMeth.clickName(genMeth, "OK"); }
+	 * 
+	 * }
+	 * 
+	 * public void openStratupScreen(StudioMethods genMeth, StudioElements
+	 * sgData) throws ParserConfigurationException, SAXException, IOException,
+	 * InterruptedException{
+	 * 
+	 * 
+	 * // boolean isStartupScreenDisplay =
+	 * genMeth.checkIsElementVisible(By.name(iosData.Appium_Startup));
+	 * 
+	 * boolean isStartupScreenDisplay =
+	 * genMeth.checkIsElementVisible(By.name("Applications"));
+	 * 
+	 * if (isStartupScreenDisplay != true ) {
+	 * 
+	 * 
+	 * }
+	 * 
+	 * } // public void changeConnectionType(String mode) { // //
+	 * NetworkConnection mobileDriver = (NetworkConnection) driver; // if (mode
+	 * == "AIRPLANE_MODE") { // //
+	 * mobileDriver.setNetworkConnection(NetworkConnection
+	 * .ConnectionType.AIRPLANE_MODE); // } // // else if (mode == "WIFI") { //
+	 * //
+	 * mobileDriver.setNetworkConnection(NetworkConnection.ConnectionType.WIFI);
+	 * // // } // // else if (mode == "DATA") { // //
+	 * mobileDriver.setNetworkConnection(NetworkConnection.ConnectionType.DATA);
+	 * // // } // // else if (mode == "ALL") { // //
+	 * mobileDriver.setNetworkConnection(NetworkConnection.ConnectionType.ALL);
+	 * // // } // // } // /* public void setAirplainMode() {
 	 * 
 	 * driver.setNetworkConnection(new NetworkConnectionSetting(true, false,
 	 * false));
@@ -1080,4 +1090,5 @@ public void clickId(StudioMethods genMeth, String id)
 	 * 
 	 * }
 	 */
+
 }
