@@ -1,9 +1,6 @@
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.touch.TouchActions;
-import org.openqa.selenium.winium.DesktopOptions;
 import org.openqa.selenium.winium.WiniumDriver;
 
 import java.io.IOException;
@@ -11,16 +8,17 @@ import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeSuite;
 import org.xml.sax.SAXException;
 
+import winium.elements.desktop.ComboBox;
+import winium.elements.desktop.ListBox;
+import winium.elements.desktop.extensions.WebElementExtensions;
+
 import com.applitools.eyes.Eyes;
 
-import java.net.URL;
-import java.net.MalformedURLException;
 
 
 public class SanityTestStudio {
@@ -69,7 +67,8 @@ public class SanityTestStudio {
 				driver.quit();
 				driver = genMeth.setDesktopOptions(genMeth);
 				genMeth.cleanLogin(genMeth);
-				Thread.sleep(6000);		
+				Thread.sleep(6000);
+		
 
 			}
 			
@@ -307,22 +306,39 @@ public class SanityTestStudio {
 
 		//Set DI 
 		genMeth.clickId(genMeth, sgData.TabItemDataItems);
-		genMeth.clickId(genMeth, sgData.ComboDataItemsCMB);
-		genMeth.clickId(genMeth, "DI_service calls 1");
+		genMeth.clickComboBox(genMeth, By.id(sgData.ComboDataItemsCMB), By.id("DI_service calls 1"));
 		
-		//save & reopen the tab
+		//save & Close the tab
 		genMeth.clickId(genMeth, sgData.BtnSave);
 		genMeth.clickId(genMeth, sgData.BtnRefresh);
 		genMeth.clickId(genMeth, sgData.BtnCloseTabItem);
 		
 		//reopen the tab
 		genMeth.doubleClickElement(By.name("List"), genMeth);
-		genMeth.clickId(genMeth, "TabItemColumns");
+		genMeth.clickId(genMeth, sgData.TabItemColumns);
 
+		//Configure the advanced columns
+		//Jump to slicer report (need to create the slicer report test first)
+		/*
+		genMeth.clickId(genMeth, "Jump to report");
+		genMeth.clickId(genMeth, "Jump to report");
+		*/
 		
-		Thread.sleep(1000);
+		
+		genMeth.clickId(genMeth, "Branch ID");
+		genMeth.sendId(genMeth, sgData.TextFieldFriendlyName, "BranchID-Not Primary");
+		genMeth.clickId(genMeth, sgData.PrimaryToogleButton);
+		
+		
+		genMeth.clickId(genMeth, "Open Date");
+		genMeth.clickId(genMeth, sgData.ExpenderFormat);
+		genMeth.clickComboBox(genMeth, By.id(sgData.ComboFormatsCMB), By.id("MMM-dd-yyyy"));
+		
+		genMeth.clickId(genMeth, sgData.PageLeft);
 
-
+		genMeth.clickId(genMeth, "Icon");
+		genMeth.clickId(genMeth, sgData.ExpenderAdvanced);
+		genMeth.clickComboBox(genMeth, By.id("AdvancedColumnTypeCMB"), By.id("IconSet"));
 		
 		
 	}

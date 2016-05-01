@@ -48,10 +48,7 @@
 			<TextFieldReportName>TextFieldReportName</TextFieldReportName>
 			<TextFieldReportDescription>TextFieldReportDescription</TextFieldReportDescription>
 			<TextFieldTabName>TextFieldTabName</TextFieldTabName>
-			
-			
-			
-			
+			<TextFieldFriendlyName>TextFieldFriendlyName</TextFieldFriendlyName>
 			
 			
 		</TextFields>
@@ -63,6 +60,7 @@
 		    <CheckBoxRememberMe>CheckBoxRememberMe</CheckBoxRememberMe> 
 		    <CheckBoxDoNotPublish>CheckBoxDoNotPublish</CheckBoxDoNotPublish>
 		    <CheckBoxNotInMobile>CheckBoxNotInMobile</CheckBoxNotInMobile>
+		    
 		</CheckBox>
 		
 		
@@ -82,7 +80,8 @@
 			<Action_TabItem>Action_TabItem</Action_TabItem>
 			<URLTabItem>URLTabItem</URLTabItem>
 			<MapTabItem>MapTabItem</MapTabItem>
-			
+			<TabItemActions>TabItemActions</TabItemActions>
+			<TabItemColumns>TabItemColumns</TabItemColumns>
 		</LeftTabs>
 		
 		
@@ -98,19 +97,38 @@
 			<ComboDataItemsCMB>DataItemsCMB</ComboDataItemsCMB>
 			<ComboComboSourceColumn>ComboSourceColumn</ComboComboSourceColumn>
 			<ComboDropdowReportFolder>DropdowReportFolder</ComboDropdowReportFolder>
+			<ComboFormatsCMB>FormatsCMB</ComboFormatsCMB>
 			
 			
 			
 		</Combo>
+		
+		
 	<RadioButtons>
 		
 		 <RDBCustomNameRB>CustomNameRB</RDBCustomNameRB>
 		 <RDBDataItem>RDBDataItem</RDBDataItem>
 		 <RDBGpsLocationRB>GpsLocationRB</RDBGpsLocationRB>
-		<RDBAddressLocationRB>AddressLocationRB</RDBAddressLocationRB>
+		 <RDBAddressLocationRB>AddressLocationRB</RDBAddressLocationRB>
 		
 		
 	</RadioButtons>
+	
+	
+	
+	<Toggle>
+		
+		<PrimaryToogleButton>PrimaryToogleButton</PrimaryToogleButton>
+		
+	</Toggle>
+	
+	<Expander>
+		
+		<ExpenderFormat>ExpenderFormat</ExpenderFormat>
+		<ExpenderAdvanced>ExpenderAdvanced</ExpenderAdvanced>
+		<ExpenderJumpToReport>JumpToReport</ExpenderJumpToReport>
+		
+	</Expander>
 	
 		   	
 <!-- 	   	General Info -->
@@ -123,6 +141,8 @@
 		<StartupApplication>SQL Golden App</StartupApplication>
 		<DIserviceCallsDemo>SELECT * from [dbo].[TBL_ServiceCalls]</DIserviceCallsDemo>
 		<GoldenAppAuto>Golden App Auto</GoldenAppAuto>
+		<PageLeft>PageLeft</PageLeft>
+		<PageRight>PageRight</PageRight>
 	
 	
 </Data>

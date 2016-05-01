@@ -45,7 +45,7 @@ public class StudioElements {
 	String TextFieldReportName;
 	String TextFieldReportDescription;
 	String TextFieldTabName;
-
+	String TextFieldFriendlyName;
 	
 	
 	//Checkbox
@@ -69,7 +69,8 @@ public class StudioElements {
 	String TabItemTabs;
 	String URLTabItem;
 	String MapTabItem;
-	
+	String TabItemActions;
+	String TabItemColumns;
 	
 	
 	
@@ -83,13 +84,22 @@ public class StudioElements {
 	String ComboDataItemsCMB;
 	String ComboComboSourceColumn;
 	String ComboDropdowReportFolder;
-	
+	String ComboFormatsCMB;
 	
 	//Radio Buttons
 	String RDBDataItem;
 	String RDBCustomNameRB;
 	String RDBGpsLocationRB;
 	String RDBAddressLocationRB;
+	
+	//Toogle
+	String PrimaryToogleButton;
+	
+	
+	//Expander
+	String ExpenderFormat;
+	String ExpenderAdvanced;
+	String ExpenderJumpToReport;
 
 	
 	//General
@@ -97,6 +107,8 @@ public class StudioElements {
 	String userQA;
 	String passwordQA;
 	String GoldenAppAuto;
+	String PageRight;
+	String PageLeft;
 
 	public StudioElements(String langXml, String xmlPath)
 			throws ParserConfigurationException, SAXException, IOException,
@@ -146,6 +158,7 @@ public class StudioElements {
 		this.TextFieldReportName = XmlHandel.readAndroidXml("TextFieldReportName", langXml, xmlPath);
 		this.TextFieldReportDescription = XmlHandel.readAndroidXml("TextFieldReportDescription", langXml, xmlPath);
 		this.TextFieldTabName = XmlHandel.readAndroidXml("TextFieldTabName", langXml, xmlPath);
+		this.TextFieldFriendlyName = XmlHandel.readAndroidXml("TextFieldFriendlyName", langXml, xmlPath);
 
 		
 		
@@ -171,6 +184,8 @@ public class StudioElements {
 		this.TabItemTabs = XmlHandel.readAndroidXml("TabItemTabs", langXml, xmlPath);
 		this.URLTabItem = XmlHandel.readAndroidXml("URLTabItem", langXml, xmlPath);
 		this.MapTabItem = XmlHandel.readAndroidXml("MapTabItem", langXml, xmlPath);
+		this.TabItemActions = XmlHandel.readAndroidXml("TabItemActions", langXml, xmlPath);
+		this.TabItemColumns = XmlHandel.readAndroidXml("TabItemColumns", langXml, xmlPath);
 
 		
 		
@@ -184,7 +199,18 @@ public class StudioElements {
 		this.ComboDataItemsCMB = XmlHandel.readAndroidXml("ComboDataItemsCMB", langXml, xmlPath);
 		this.ComboComboSourceColumn = XmlHandel.readAndroidXml("ComboComboSourceColumn", langXml, xmlPath);
 		this.ComboDropdowReportFolder = XmlHandel.readAndroidXml("ComboDropdowReportFolder", langXml, xmlPath);
+		this.ComboFormatsCMB = XmlHandel.readAndroidXml("ComboFormatsCMB", langXml, xmlPath);
 
+		
+		
+		
+		this.PrimaryToogleButton = XmlHandel.readAndroidXml("PrimaryToogleButton", langXml, xmlPath);
+
+		this.ExpenderFormat = XmlHandel.readAndroidXml("ExpenderFormat", langXml, xmlPath);
+		this.ExpenderAdvanced = XmlHandel.readAndroidXml("ExpenderAdvanced", langXml, xmlPath);
+		this.ExpenderJumpToReport = XmlHandel.readAndroidXml("ExpenderJumpToReport", langXml, xmlPath);
+
+		
 		
 		
 		
@@ -205,6 +231,8 @@ public class StudioElements {
 		this.userQA = XmlHandel.readAndroidXml("userQA", langXml, xmlPath);
 		this.passwordQA = XmlHandel.readAndroidXml("passwordQA", langXml, xmlPath);
 		this.GoldenAppAuto = XmlHandel.readAndroidXml("GoldenAppAuto", langXml, xmlPath);
+		this.PageRight = XmlHandel.readAndroidXml("PageRight", langXml, xmlPath);
+		this.PageLeft = XmlHandel.readAndroidXml("PageLeft", langXml, xmlPath);
 
 		
 		

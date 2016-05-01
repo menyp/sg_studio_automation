@@ -27,6 +27,11 @@ import org.openqa.selenium.winium.DesktopOptions;
 import org.openqa.selenium.winium.WiniumDriver;
 import org.xml.sax.SAXException;
 
+import winium.elements.desktop.ComboBox;
+import winium.elements.desktop.ListBox;
+
+import winium.elements.desktop.extensions.WebElementExtensions;
+
 import com.applitools.eyes.Eyes;
 import com.google.common.base.Function;
 
@@ -330,21 +335,6 @@ public class StudioMethods {
 
 	}
 
-	public void clickId1(StudioMethods genMeth, String id)
-			throws InterruptedException {
-
-		try {
-
-			WebElement myElement = genMeth.fluentwait(driver, By.id(id));
-			myElement.click();
-		}
-
-		catch (Exception e) {
-
-			org.testng.Assert.fail(id + " didn't display");
-
-		}
-	}
 
 	public void clickId(StudioMethods genMeth, String id)
 			throws InterruptedException, IOException {
@@ -983,6 +973,31 @@ public class StudioMethods {
 		genMeth.clickId(genMeth, sgData.BtnCloseTabItem);
 
 	}
+	
+	
+	public void clickComboBox(StudioMethods genMeth, By byCombo, By byLocator) throws InterruptedException{
+
+		//This method will open a combo, scroll to the specific element & click it
+		ComboBox combo;
+		WebElement el = genMeth.returnBy(genMeth, byCombo);
+		combo = WebElementExtensions.toComboBox(el);
+		combo.expand();
+		combo.findElement(byLocator).click();
+		//combo.scrollTo(byLocator).click();
+	
+	}
+	
+	
+	public void listBox(StudioMethods genMeth, By by, By byClickElement) throws InterruptedException{
+
+		//This method will open a combo, scroll to the specific element & click it
+		ListBox list;
+		WebElement el = genMeth.returnBy(genMeth, by);
+		list = WebElementExtensions.toListBox(el);
+		list.scrollTo(byClickElement);
+	}
+		
+	
 	/*
 	 * public void locationServicesHadle(IosMethods genMeth) throws
 	 * ParserConfigurationException, SAXException, IOException,
