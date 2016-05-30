@@ -19,8 +19,7 @@ public class StudioElements {
 	String BtnReportIcon;
 	String BtnSGISRootTextBlock;
 	String BtnX;
-	String BtnLsmApplicationsName;
-	String BtnEditApplication;
+	String BtnEdit;
 	String BtnPublishApplication;
 	String BtnExportApplication;
 	String BtnDuplicateApplication;
@@ -30,8 +29,9 @@ public class StudioElements {
 	String BtnCancellationButton;
 	String BtnApprovalButton;
 	String BtnAddTabButton;
-	String BtnNewDataItemApplication;
+	String BtnNewDataItem;
 	String BtnNewReport;
+	String BtnAddCategory;
 	
 	//Text Fields
 	String TextFieldUsername;
@@ -47,7 +47,6 @@ public class StudioElements {
 	String TextFieldTabName;
 	String TextFieldFriendlyName;
 	
-	
 	//Checkbox
 	String CheckBoxRememberMe;
 	String CheckBoxDoNotPublish;
@@ -58,6 +57,7 @@ public class StudioElements {
 	
 	String TabItemGeneral;
 	String TabItemDataItems;
+	String TabItemDataItem;
 	String TabItemReports;
 	String TabItemPermissions;
 	String TabItemQuery;
@@ -85,7 +85,8 @@ public class StudioElements {
 	String ComboComboSourceColumn;
 	String ComboDropdowReportFolder;
 	String ComboFormatsCMB;
-	
+	String ComboReportFolder;
+
 	//Radio Buttons
 	String RDBDataItem;
 	String RDBCustomNameRB;
@@ -94,13 +95,24 @@ public class StudioElements {
 	
 	//Toogle
 	String PrimaryToogleButton;
-	
+	String ToogleVisible;
+	String ToggleButtonAllowNavigation;
 	
 	//Expander
 	String ExpenderFormat;
 	String ExpenderAdvanced;
 	String ExpenderJumpToReport;
-
+	
+	//LSM
+	
+	String LsmDataItems; 
+	String LsmApplications; 
+	String LsmReports; 
+	String LsmDS; 
+	String LsmSecurity; 
+	String LsmAdmin; 
+	String LsmNewApp;
+	String LsmTabsTreeViewItem;
 	
 	//General
 	String DIserviceCallsDemo;
@@ -126,9 +138,8 @@ public class StudioElements {
 		this.BtnReportIcon = XmlHandel.readAndroidXml("BtnReportIcon", langXml, xmlPath);
 		this.BtnSGISRootTextBlock = XmlHandel.readAndroidXml("BtnSGISRootTextBlock", langXml, xmlPath);
 		this.BtnX = XmlHandel.readAndroidXml("BtnX", langXml, xmlPath);
-		this.BtnLsmApplicationsName = XmlHandel.readAndroidXml("BtnLsmApplicationsName", langXml, xmlPath);
 		
-		this.BtnEditApplication = XmlHandel.readAndroidXml("BtnEditApplication", langXml, xmlPath);
+		this.BtnEdit = XmlHandel.readAndroidXml("BtnEdit", langXml, xmlPath);
 		this.BtnPublishApplication = XmlHandel.readAndroidXml("BtnPublishApplication", langXml, xmlPath);
 		this.BtnExportApplication = XmlHandel.readAndroidXml("BtnExportApplication", langXml, xmlPath);
 		this.BtnDuplicateApplication = XmlHandel.readAndroidXml("BtnDuplicateApplication", langXml, xmlPath);
@@ -138,8 +149,9 @@ public class StudioElements {
 		this.BtnCancellationButton = XmlHandel.readAndroidXml("BtnCancellationButton", langXml, xmlPath);
 		this.BtnApprovalButton = XmlHandel.readAndroidXml("BtnApprovalButton", langXml, xmlPath);
 		this.BtnAddTabButton = XmlHandel.readAndroidXml("BtnAddTabButton", langXml, xmlPath);
-		this.BtnNewDataItemApplication = XmlHandel.readAndroidXml("BtnNewDataItemApplication", langXml, xmlPath);
+		this.BtnNewDataItem = XmlHandel.readAndroidXml("BtnNewDataItem", langXml, xmlPath);
 		this.BtnNewReport = XmlHandel.readAndroidXml("BtnNewReport", langXml, xmlPath);
+		this.BtnAddCategory = XmlHandel.readAndroidXml("BtnAddCategory", langXml, xmlPath);
 
 		
 		
@@ -168,11 +180,22 @@ public class StudioElements {
 		this.CheckBoxNotInMobile = XmlHandel.readAndroidXml("CheckBoxNotInMobile", langXml, xmlPath);
 		
 		
+		this.LsmDataItems = XmlHandel.readAndroidXml("LsmDataItems", langXml, xmlPath);
+		this.LsmApplications = XmlHandel.readAndroidXml("LsmApplications", langXml, xmlPath);
+		this.LsmReports = XmlHandel.readAndroidXml("LsmReports", langXml, xmlPath);
+		this.LsmDS = XmlHandel.readAndroidXml("LsmDS", langXml, xmlPath);
+		this.LsmSecurity = XmlHandel.readAndroidXml("LsmSecurity", langXml, xmlPath);
+		this.LsmAdmin = XmlHandel.readAndroidXml("LsmAdmin", langXml, xmlPath);
+		this.LsmNewApp = XmlHandel.readAndroidXml("LsmNewApp", langXml, xmlPath);
+		this.LsmTabsTreeViewItem = XmlHandel.readAndroidXml("LsmTabsTreeViewItem", langXml, xmlPath);
 
-
+		
+		
+		
 		
 		this.TabItemGeneral = XmlHandel.readAndroidXml("TabItemGeneral", langXml, xmlPath);
 		this.TabItemDataItems = XmlHandel.readAndroidXml("TabItemDataItems", langXml, xmlPath);
+		this.TabItemDataItem = XmlHandel.readAndroidXml("TabItemDataItem", langXml, xmlPath);
 		this.TabItemReports = XmlHandel.readAndroidXml("TabItemReports", langXml, xmlPath);
 		this.TabItemPermissions = XmlHandel.readAndroidXml("TabItemPermissions", langXml, xmlPath);
 		this.TabItemQuery = XmlHandel.readAndroidXml("TabItemQuery", langXml, xmlPath);
@@ -200,11 +223,16 @@ public class StudioElements {
 		this.ComboComboSourceColumn = XmlHandel.readAndroidXml("ComboComboSourceColumn", langXml, xmlPath);
 		this.ComboDropdowReportFolder = XmlHandel.readAndroidXml("ComboDropdowReportFolder", langXml, xmlPath);
 		this.ComboFormatsCMB = XmlHandel.readAndroidXml("ComboFormatsCMB", langXml, xmlPath);
+		this.ComboReportFolder = XmlHandel.readAndroidXml("ComboReportFolder", langXml, xmlPath);
 
 		
 		
 		
 		this.PrimaryToogleButton = XmlHandel.readAndroidXml("PrimaryToogleButton", langXml, xmlPath);
+		this.ToogleVisible = XmlHandel.readAndroidXml("ToogleVisible", langXml, xmlPath);
+		this.ToggleButtonAllowNavigation = XmlHandel.readAndroidXml("ToggleButtonAllowNavigation", langXml, xmlPath);
+
+		
 
 		this.ExpenderFormat = XmlHandel.readAndroidXml("ExpenderFormat", langXml, xmlPath);
 		this.ExpenderAdvanced = XmlHandel.readAndroidXml("ExpenderAdvanced", langXml, xmlPath);

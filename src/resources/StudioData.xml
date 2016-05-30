@@ -12,12 +12,11 @@
 			<BtnAddDataItem>BtnAddDataItem</BtnAddDataItem>
 			<BtnPreview>BtnPreview</BtnPreview>
 			<BtnAddReport>BtnAddReport</BtnAddReport>
-			<BtnReportIcon>BtnReportIcon</BtnReportIcon>
+			<BtnReportIcon>BtnTemplateApplicationIcon</BtnReportIcon>
 			<BtnSGISRootTextBlock>SGISRootTextBlock</BtnSGISRootTextBlock>
 			<BtnX>BtnX</BtnX>
-			<BtnLsmApplicationsName>Applications</BtnLsmApplicationsName>
 			
-			<BtnEditApplication>BtnEditApplication</BtnEditApplication>
+			<BtnEdit>BtnEdit</BtnEdit>
 			<BtnPublishApplication>BtnPublishApplication</BtnPublishApplication>
 			<BtnExportApplication>BtnExportApplication</BtnExportApplication>
 			<BtnDuplicateApplication>BtnDuplicateApplication</BtnDuplicateApplication>
@@ -27,8 +26,11 @@
 			<BtnCancellationButton>CancellationButton</BtnCancellationButton>
 			<BtnApprovalButton>ApprovalButton</BtnApprovalButton>
 			<BtnAddTabButton>AddTabButton</BtnAddTabButton>
-			<BtnNewDataItemApplication>BtnNew Data ItemApplication</BtnNewDataItemApplication>
+			<BtnNewDataItem>BtnNew Data Item</BtnNewDataItem>
 			<BtnNewReport>BtnNew Report</BtnNewReport>
+			<BtnAddCategory>BtnAddCategory</BtnAddCategory>
+			                
+			
 			
 			
 			
@@ -68,7 +70,8 @@
 		<LeftTabs>
 			
 			<TabItemGeneral>TabItemGeneral</TabItemGeneral>
-			<TabItemDataItems>TabItemDataItem</TabItemDataItems>
+			<TabItemDataItems>TabItemDataItems</TabItemDataItems>
+			<TabItemDataItem>TabItemDataItem</TabItemDataItem>
 			<TabItemTabs>TabItemTabs</TabItemTabs>
 			<TabItemReports>TabItemReports</TabItemReports>
 			<TabItemPermissions>TabItemPermissions</TabItemPermissions>
@@ -98,6 +101,7 @@
 			<ComboComboSourceColumn>ComboSourceColumn</ComboComboSourceColumn>
 			<ComboDropdowReportFolder>DropdowReportFolder</ComboDropdowReportFolder>
 			<ComboFormatsCMB>FormatsCMB</ComboFormatsCMB>
+			<ComboReportFolder>DropdowReportFolder</ComboReportFolder>
 			
 			
 			
@@ -106,10 +110,11 @@
 		
 	<RadioButtons>
 		
-		 <RDBCustomNameRB>CustomNameRB</RDBCustomNameRB>
+		 <RDBCustomNameRB>RDBECustomName</RDBCustomNameRB>
 		 <RDBDataItem>RDBDataItem</RDBDataItem>
 		 <RDBGpsLocationRB>GpsLocationRB</RDBGpsLocationRB>
 		 <RDBAddressLocationRB>AddressLocationRB</RDBAddressLocationRB>
+		 
 		
 		
 	</RadioButtons>
@@ -119,6 +124,8 @@
 	<Toggle>
 		
 		<PrimaryToogleButton>PrimaryToogleButton</PrimaryToogleButton>
+		<ToogleVisible>ToogleVisible</ToogleVisible>
+		<ToggleButtonAllowNavigation>ToggleButtonAllowNavigation</ToggleButtonAllowNavigation>
 		
 	</Toggle>
 	
@@ -129,6 +136,17 @@
 		<ExpenderJumpToReport>JumpToReport</ExpenderJumpToReport>
 		
 	</Expander>
+	
+	<LSM>
+		<LsmDataItems>DataItemsTreeViewItem</LsmDataItems>
+		<LsmApplications>ApplicationsTreeViewTextBlock</LsmApplications>
+		<LsmReports>ReportsTreeViewItem</LsmReports>
+		<LsmDS>DataSourcesTreeView</LsmDS>
+		<LsmSecurity>SecurityTreeView</LsmSecurity>
+		<LsmAdmin>AdminText</LsmAdmin>
+		<LsmNewApp>NewApp</LsmNewApp>
+		<LsmTabsTreeViewItem>LsmTabsTreeViewItem</LsmTabsTreeViewItem>
+	</LSM>
 	
 		   	
 <!-- 	   	General Info -->

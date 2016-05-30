@@ -1,3 +1,4 @@
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -10,6 +11,7 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import javax.imageio.ImageIO;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.io.FileUtils;
@@ -29,10 +31,13 @@ import org.xml.sax.SAXException;
 
 import winium.elements.desktop.ComboBox;
 import winium.elements.desktop.ListBox;
-
 import winium.elements.desktop.extensions.WebElementExtensions;
 
+
+
+
 import com.applitools.eyes.Eyes;
+import com.gargoylesoftware.htmlunit.javascript.host.html.Image;
 import com.google.common.base.Function;
 
 public class StudioMethods {
@@ -53,19 +58,34 @@ public class StudioMethods {
 		genMeth.sendId(genMeth, sgData.TextFieldPassword, sgData.passwordQA);
 
 		genMeth.clickId(genMeth, sgData.BtnSignIn);
-
+	//	genMeth.takeScreenShot(driver, genMeth,"");
 	}
 
 	public void eyesCheckWindow(Eyes eyes, String testName, Boolean useEye)
-			throws InterruptedException {
+			throws InterruptedException, IOException {
 
 		if (useEye) {
-			eyes.setApiKey("Hbh6716cKDCgn8a9bMAREPM105nbW109PQe0993So5GwFpNM110");
 
-			eyes.open(driver, "iOS_SG", testName);
+
+			eyes.setApiKey("Hbh6716cKDCgn8a9bMAREPM105nbW109PQe0993So5GwFpNM110");
+			BufferedImage img;
+		//	eyes.open(driver, "Studio testing", testName);
+
+			File scrFile = (driver.getScreenshotAs(OutputType.FILE));
+            img = ImageIO.read(scrFile);
+  //          eyes.checkImage(img, "Temp test");
+
+            
+			// Now you can do whatever you need to do with it, for example copy
+			// somewhere
+			
+		
+			
+/*
+			eyes.open(driver, "Studio testing", testName);
 			eyes.setMatchTimeout(2);
 			eyes.checkWindow("Sample Screen");
-
+*/
 			boolean skipfailure = true;
 			if (skipfailure) {
 				// Use the below code instead of eyes.close(); --> It will allow
@@ -152,20 +172,20 @@ public class StudioMethods {
 
 	}
 
-	public void takeScreenShotPositive(StudioMethods genMeth, String imageName)
+	public void takeScreenShotSG(StudioMethods genMeth, String imageName)
 			throws IOException {
-		String currentTime = genMeth.currentTime();
+		//String currentTime = genMeth.currentTime();
 		File scrFile = (driver.getScreenshotAs(OutputType.FILE));
-		String currentDate = genMeth.currentDate();
+		//String currentDate = genMeth.currentDate();
 
 		// Now you can do whatever you need to do with it, for example copy
 		// somewhere
 		String imagePath = genMeth
 				.getValueFromPropFile("screenshotPathPositive")
-				+ currentDate
-				+ "/" + currentTime + "_" + imageName + ".JPG";
+				
+				+ "/"  + "_" + imageName + ".JPG";
 		FileUtils.copyFile(scrFile, new File(imagePath));
-
+		
 	}
 
 	/*
@@ -789,6 +809,7 @@ public class StudioMethods {
 					.pollingEvery(1, TimeUnit.SECONDS)
 					.ignoring(NoSuchElementException.class)
 					.until(ExpectedConditions.visibilityOfElementLocated(By));
+			Thread.sleep(1000);
 
 		}
 
@@ -956,7 +977,7 @@ public class StudioMethods {
 
 		genMeth.rightClickElement(By.id(sgData.BtnSGISRootTextBlock), genMeth);
 		genMeth.clickName(genMeth, "Refresh");
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 
 	}
 
@@ -964,8 +985,11 @@ public class StudioMethods {
 	public void createGoldenAutomation(StudioMethods genMeth) throws InterruptedException, IOException{
 
 		//Create Golden App Automation
-		genMeth.rightClickElement(By.name("Applications"), genMeth);
-		genMeth.clickName(genMeth, "New Application");
+		//genMeth.rightClickElement(By.name("Applications"), genMeth);
+		genMeth.rightClickElement(By.id("ApplicationsTreeViewTextBlock"), genMeth);
+
+		//genMeth.clickName(genMeth, "New Application");
+		genMeth.clickId(genMeth, "NewApp");
 
 		//Create a new app & save it
 		genMeth.sendId(genMeth, sgData.TextFieldApplicationName_ID, sgData.GoldenAppAuto);		
